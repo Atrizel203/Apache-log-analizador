@@ -1,0 +1,67 @@
+[
+  {
+    "ip": "192.168.1.105",
+    "timestamp": "15/Jun/2025:10:30:15 +0000",
+    "method": "GET",
+    "url": "/admin.php?id=1' OR '1'='1'--",
+    "code": 200,
+    "userAgent": "Mozilla/5.0 (compatible; sqlmap/1.7.0)",
+    "attack": {
+      "type": "SQL Injection",
+      "confidence": "high",
+      "pattern": "' OR '1'='1"
+    }
+  },
+  {
+    "ip": "8.8.8.8",
+    "timestamp": "15/Jun/2025:10:32:05 +0000",
+    "method": "GET",
+    "url": "/../../../../etc/passwd",
+    "code": 404,
+    "userAgent": "curl/7.68.0",
+    "attack": {
+      "type": "Path Traversal",
+      "confidence": "high",
+      "pattern": "/../"
+    }
+  },
+  {
+    "ip": "10.0.0.5",
+    "timestamp": "15/Jun/2025:10:33:10 +0000",
+    "method": "GET",
+    "url": "/search?q=<script>alert('XSS')</script>",
+    "code": 200,
+    "userAgent": "Mozilla/5.0",
+    "attack": {
+      "type": "Cross-Site Scripting (XSS)",
+      "confidence": "medium",
+      "pattern": "<script>"
+    }
+  },
+  {
+    "ip": "192.168.1.20",
+    "timestamp": "15/Jun/2025:10:34:00 +0000",
+    "method": "GET",
+    "url": "/cgi-bin/test.cgi",
+    "code": 404,
+    "userAgent": "Mozilla/5.00 (Nikto/2.1.6) (Evasor:1;...)",
+    "attack": {
+      "type": "Automated Scan Tool",
+      "confidence": "high",
+      "pattern": "User-Agent: Nikto"
+    }
+  },
+  {
+    "ip": "172.17.0.1",
+    "timestamp": "15/Jun/2025:11:00:11 +0000",
+    "method": "GET",
+    "url": "/login",
+    "code": 200,
+    "userAgent": "-",
+    "attack": {
+      "type": "Automated Scan (Rate Limit)",
+      "confidence": "low",
+      "pattern": "> 10 requests in 60s"
+    }
+  }
+]
